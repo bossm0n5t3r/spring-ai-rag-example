@@ -1,0 +1,8 @@
+### Ask questions
+
+POST localhost:8080/ask
+Content-Type: application/json
+
+{
+  "question": "What is the rule of the game?"
+}
