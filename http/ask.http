@@ -1,6 +1,15 @@
-### Ask questions
+### Ask questions with chat client
 
-POST localhost:8080/ask
+POST localhost:8080/ask/chat-client
+Content-Type: application/json
+
+{
+  "question": "What is the rule of the game?"
+}
+
+### Ask questions with chat model
+
+POST localhost:8080/ask/chat-model
 Content-Type: application/json
 
 {

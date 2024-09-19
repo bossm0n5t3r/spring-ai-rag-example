@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RestController
 class AskController(
     private val askService: AskService,
 ) {
-    @PostMapping
-    fun ask(
+    @PostMapping("/chat-client")
+    fun askWithChatClient(
         @RequestBody question: Question,
-    ): Answer = askService.ask(question)
+    ): Answer = askService.askWithChatClient(question)
+
+    @PostMapping("/chat-model")
+    fun askWithChatModel(
+        @RequestBody question: Question,
+    ): Answer = askService.askWithChatModel(question)
 }
