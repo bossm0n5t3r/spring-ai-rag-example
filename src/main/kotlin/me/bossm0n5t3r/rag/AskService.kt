@@ -1,7 +1,6 @@
 package me.bossm0n5t3r.rag
 
 import org.springframework.ai.chat.client.ChatClient
-import org.springframework.ai.chat.client.ChatClient.UserSpec
 import org.springframework.ai.document.Document
 import org.springframework.ai.vectorstore.SearchRequest
 import org.springframework.ai.vectorstore.VectorStore
@@ -29,7 +28,7 @@ class AskService(
         val answer =
             aiClient
                 .prompt()
-                .user { userSpec: UserSpec ->
+                .user { userSpec ->
                     userSpec
                         .text(ragPromptTemplate)
                         .param("input", question.question)
